@@ -17,6 +17,7 @@ namespace KS_MapHandlerReloaded
         {
             InitializeComponent();
             tbPath.ButtonClick += tbPath_ButtonClick;
+            this.MaximizeBox = false;
         }
 
         private void tbPath_ButtonClick(object sender, EventArgs e)
