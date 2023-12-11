@@ -32,7 +32,7 @@
             this.statusLabel = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.cblMaps = new System.Windows.Forms.CheckedListBox();
             this.showMapName = new System.Windows.Forms.Label();
             this.mapPreview = new System.Windows.Forms.PictureBox();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
@@ -60,7 +60,7 @@
             this.linkLabel1.TabIndex = 1;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Set path";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblSetPath_Clicked);
             // 
             // linkLabel2
             // 
@@ -72,15 +72,15 @@
             this.linkLabel2.TabIndex = 2;
             this.linkLabel2.TabStop = true;
             this.linkLabel2.Text = "Credits";
-            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
+            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblCredits_Clicked);
             // 
-            // checkedListBox1
+            // cblMaps
             // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(12, 57);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(196, 334);
-            this.checkedListBox1.TabIndex = 3;
+            this.cblMaps.FormattingEnabled = true;
+            this.cblMaps.Location = new System.Drawing.Point(12, 57);
+            this.cblMaps.Name = "cblMaps";
+            this.cblMaps.Size = new System.Drawing.Size(196, 334);
+            this.cblMaps.TabIndex = 3;
             // 
             // showMapName
             // 
@@ -112,7 +112,7 @@
             this.metroButton1.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroButton1.UseSelectable = true;
             this.metroButton1.UseStyleColors = true;
-            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
+            this.metroButton1.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // metroButton2
             // 
@@ -127,7 +127,7 @@
             this.metroButton2.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroButton2.UseSelectable = true;
             this.metroButton2.UseStyleColors = true;
-            this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click);
+            this.metroButton2.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // Form1
             // 
@@ -138,7 +138,7 @@
             this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.mapPreview);
             this.Controls.Add(this.showMapName);
-            this.Controls.Add(this.checkedListBox1);
+            this.Controls.Add(this.cblMaps);
             this.Controls.Add(this.linkLabel2);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.statusLabel);
@@ -161,7 +161,7 @@
         private System.Windows.Forms.Label statusLabel;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.LinkLabel linkLabel2;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.CheckedListBox cblMaps;
         private System.Windows.Forms.Label showMapName;
         private System.Windows.Forms.PictureBox mapPreview;
         private MetroFramework.Controls.MetroButton metroButton1;

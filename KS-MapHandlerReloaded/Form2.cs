@@ -16,10 +16,10 @@ namespace KS_MapHandlerReloaded
         public Form2()
         {
             InitializeComponent();
-            metroTextBox1.ButtonClick += MetroTextBox1_ButtonClick;
+            tbPath.ButtonClick += tbPath_ButtonClick;
         }
 
-        private void MetroTextBox1_ButtonClick(object sender, EventArgs e)
+        private void tbPath_ButtonClick(object sender, EventArgs e)
         {
             FolderBrowserDialog dialog = new FolderBrowserDialog();
 
