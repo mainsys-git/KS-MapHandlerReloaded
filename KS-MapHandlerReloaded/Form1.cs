@@ -71,8 +71,24 @@ namespace KS_MapHandlerReloaded
 
         private void RenameMap(string oldName, string newName)
         {
-            File.Move(this.bundlePath + oldName, this.bundlePath + newName);
+            string oldKspPath = this.bundlePath + oldName;
+            string newKspPath = this.bundlePath + newName;
+            if (File.Exists(oldKspPath))
+            {
+                File.Move(oldKspPath, newKspPath);
+            }
+
+            string oldJpgName = Path.ChangeExtension(oldName, ".jpg");
+            string newJpgName = Path.ChangeExtension(newName, ".jpg");
+            string oldJpgPath = this.bundlePath + oldJpgName;
+            string newJpgPath = this.bundlePath + newJpgName;
+
+            if (File.Exists(oldJpgPath))
+            {
+                File.Move(oldJpgPath, newJpgPath);
+            }
         }
+
 
         private void cblMaps_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -85,8 +101,18 @@ namespace KS_MapHandlerReloaded
 
         private void previewSelected()
         {
-            this.showMapName.Text = this.cblMaps.SelectedItem.ToString();
-            this.mapPreview.ImageLocation = Path.ChangeExtension(this.bundlePath + this.cblMaps.SelectedItem.ToString(), ".jpg");
+            string selectedMapName = this.cblMaps.SelectedItem.ToString();
+
+            string jpgName = selectedMapName.StartsWith("0_") ? selectedMapName.Remove(0, 2) : selectedMapName;
+            string imagePath = Path.ChangeExtension(this.bundlePath + jpgName, ".jpg");
+
+            if (!File.Exists(imagePath))
+            {
+                imagePath = Path.ChangeExtension(this.bundlePath + "0_" + jpgName, ".jpg");
+            }
+
+            this.showMapName.Text = jpgName;
+            this.mapPreview.ImageLocation = imagePath;
         }
 
         private void lblSetPath_Clicked(object sender, LinkLabelLinkClickedEventArgs e)
